@@ -44,6 +44,18 @@ npm run dev   # http://localhost:3000
 └─ README.md            このファイル
 ```
 
-`src/` と `App.js` は、Webアプリに切り替える前の Expo 版プロトタイプです。
-提出対象は `web/` 配下のみで、ビルドにも動作にも関与しません
+`src/` と `App.js` は、Webアプリに切り替える前の Expo 版プロトタイプ（40語・フラッシュカード＋4択、Claude連携なし）です。
+**コンペの提出対象は `web/` 配下のみ**で、Expo版はビルドにも動作にも関与しません
 （切り替えの経緯は制作メモの「判断1」に記載）。
+
+## デプロイ構成（Vercel）
+
+このリポジトリは2つのアプリを含むため、Vercelでは**別々のプロジェクト**として扱います。
+
+| 対象 | Vercelの Root Directory | ビルド | 出力 |
+| --- | --- | --- | --- |
+| **提出用アプリ（Next.js）** | **`web`** | Next.js自動検出 | `.next` |
+| Expo版プロトタイプ（任意） | `./`（ルート） | `expo export -p web`（ルートの `vercel.json`） | `dist` |
+
+> ⚠️ Root Directory を `./` のままにすると、Expo版（＝提出対象外）が公開されます。
+> 提出用URLを作るときは必ず **Root Directory に `web`** を指定してください。
