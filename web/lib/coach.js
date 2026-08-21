@@ -10,40 +10,37 @@
 // =====================================================================
 import pack from '@/data/coach_pack.json';
 import { ERROR_TYPES } from './errorTypes';
+import { listedAsSimilar, meaningsOverlap, posDiffers, scenesOverlap } from './similarity';
 
 export function getPrebaked(wordId) {
   return pack[String(wordId)] || null;
 }
 
-function similarList(similar) {
-  if (!similar) return [];
-  return similar.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
-}
-
 /**
  * 誤答タイプを判定する。
  * 優先度: 類似語の混同 > 品詞の取り違え > 場面イメージ違い > 記憶が薄い
+ *
+ * 判定材料は、選択肢自身が持つ語・品詞・場面・類似語。
+ * （同じ綴りで意味違いの見出しが複数あるため、単語名からの逆引きはしない）
  */
 export function classifyError({
-  word, pos, similar, exampleScene,
-  chosenWord, chosenPos, chosenScene, chosenSimilar,
+  word, pos, meaning, similar, exampleScene,
+  chosenWord, chosenPos, chosenMeaning, chosenScene, chosenSimilar,
 }) {
   if (!chosenWord) return 'memory';
 
-  // 出題語・誤答語の双方の similar を突き合わせる
-  // （同じ綴りで意味違いの見出しが複数あるため、選択肢が持つ similar をそのまま使う）
-  const targetSimilar = similarList(similar);
-  const wrongSimilar = similarList(chosenSimilar);
-
-  // 互いに「混同しやすい類似語」として登録されていれば混同
+  // 1. 互いに「混同しやすい類似語」として登録されている、
+  //    または訳語が部分的に重なる（供給・提供する ⇔ 提供する・与える）
   if (
-    targetSimilar.includes(String(chosenWord).toLowerCase()) ||
-    wrongSimilar.includes(String(word).toLowerCase())
+    listedAsSimilar(word, similar, chosenWord, chosenSimilar) ||
+    meaningsOverlap(meaning, chosenMeaning)
   ) {
     return 'confusion';
   }
-  if (chosenPos && pos && chosenPos !== pos) return 'pos';
-  if (chosenScene && exampleScene && chosenScene === exampleScene) return 'scene';
+  // 2. 品詞がまったく重ならない
+  if (posDiffers(pos, chosenPos)) return 'pos';
+  // 3. 固有性の高いビジネス場面タグが重なる
+  if (scenesOverlap(exampleScene, chosenScene)) return 'scene';
   return 'memory';
 }
 
@@ -51,8 +48,13 @@ export function classifyError({
 function buildReason(type, p) {
   const { word, meaning, pos, exampleScene, similar, chosenMeaning, chosenWord, chosenPos } = p;
   switch (type) {
-    case 'confusion':
-      return `${chosenWord ? `${chosenWord}（${chosenMeaning}）` : `「${chosenMeaning}」`}と混同したようです。${word} は「${meaning}」で、${exampleScene}の場面で使われます。特に ${similar} との違いを意識すると迷いが減ります。`;
+    case 'confusion': {
+      const head = chosenWord ? `${chosenWord}（${chosenMeaning}）` : `「${chosenMeaning}」`;
+      const tail = similar
+        ? `特に ${similar} との違いを意識すると迷いが減ります。`
+        : `訳語が一部重なる語なので、使われる場面ごと区別しましょう。`;
+      return `${head}と混同したようです。${word} は「${meaning}」で、${exampleScene}の場面で使われます。${tail}`;
+    }
     case 'pos':
       return `選んだ「${chosenMeaning}」は${chosenPos}の意味でした。${word} は${pos}なので、文の中での働きが違います。選択肢の品詞から先に絞り込むと、迷いが減ります。`;
     case 'scene':
@@ -73,10 +75,12 @@ export function localFeedback(p) {
     : classifyError({
         word: p.word,
         pos: p.pos,
+        meaning: p.meaning,
         similar: p.similar,
         exampleScene: p.exampleScene,
         chosenWord: p.chosenWord,
         chosenPos: p.chosenPos,
+        chosenMeaning: p.chosenMeaning,
         chosenScene: p.chosenScene,
         chosenSimilar: p.chosenSimilar,
       });

@@ -18,13 +18,29 @@ const FeedbackSchema = z.object({
 
 const VALID_TYPES = ERROR_TYPE_KEYS;
 
+// 最低限のフィードバック（リクエスト本体が壊れていた場合の最終防衛線）
+const EMERGENCY = {
+  reason: '',
+  error_type: null,
+  example_en: '',
+  example_ja: '',
+  tip: '',
+  ai: false,
+};
+
 export async function POST(req) {
-  const body = await req.json();
+  // ここで失敗するとアプリ側は解説なしになるため、JSONの解析ごと保護する
+  let body;
+  let offline;
+  try {
+    body = await req.json();
+    offline = localFeedback(body);
+  } catch (err) {
+    console.error('feedback: bad request', err?.message || err);
+    return Response.json(EMERGENCY);
+  }
+
   const client = getClient();
-
-  // オフラインコーチの結果（APIキーが無い場合はこれをそのまま返す）
-  const offline = localFeedback(body);
-
   if (!client) {
     return Response.json(offline);
   }
@@ -34,6 +50,9 @@ export async function POST(req) {
       model: MODEL,
       max_tokens: 600,
       system: [
+        // プロンプトキャッシュの指定。既定の claude-haiku-4-5 は最小キャッシュ長が
+        // 4096トークンあり、このシステムプロンプト（約1000トークン）では実際には
+        // キャッシュされない。ANTHROPIC_MODEL を最小長の短いモデルに変えたときに効く。
         { type: 'text', text: FEEDBACK_SYSTEM, cache_control: { type: 'ephemeral' } },
       ],
       messages: [
@@ -55,7 +74,7 @@ export async function POST(req) {
           }),
         },
       ],
-      output_config: { format: zodOutputFormat(FeedbackSchema, 'feedback') },
+      output_config: { format: zodOutputFormat(FeedbackSchema) },
     });
 
     const parsed = response.parsed_output;

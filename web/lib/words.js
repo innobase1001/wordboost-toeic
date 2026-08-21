@@ -1,5 +1,6 @@
 // TOEIC単語データの読み込みと出題ロジック
 import wordlist from '@/data/toeic_wordlist.json';
+import { tokens, meaningsOverlap, scenesOverlap, posDiffers } from './similarity';
 
 export const words = wordlist;
 export const TOTAL_WORDS = wordlist.length;
@@ -14,23 +15,23 @@ function shuffle(arr) {
   return a;
 }
 
-// 類似語文字列 "supply, offer, give" を配列に
-function similarList(similar) {
-  if (!similar) return [];
-  return similar.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
-}
-
 // ある単語に対して「紛らわしい」誤答（意味）を3つ選ぶ
-// 優先度: 類似語(similar)に含まれる単語 > 同じビジネス場面 > 同じ品詞 > その他
+//
+// 支給データの similar は、300語リストの外にある語も多く挙げている
+// （860トークン中、リスト内に実在するのは約12%）。そのため similar 一致だけに頼ると
+// 誤答がほぼランダムになってしまうので、意味・場面・品詞の重なりも加点する。
+// 重み付けは支給300語でのシミュレーションで、誤答タイプが4種に偏りなく
+// 分かれるように決定した（類似語6 / 意味5 / 場面3 / 品詞1）。
 function buildDistractors(target, pool) {
-  const sim = similarList(target.similar);
+  const sim = tokens(target.similar);
   const scored = pool
     .filter((w) => w.id !== target.id && w.meaning !== target.meaning)
     .map((w) => {
       let score = 0;
-      if (sim.includes(w.word.toLowerCase())) score += 5; // 混同しやすい類似語
-      if (w.example_scene === target.example_scene) score += 2; // 同じ場面
-      if (w.pos === target.pos) score += 1; // 同じ品詞
+      if (sim.includes(w.word.toLowerCase())) score += 6; // 混同しやすい類似語として明記
+      if (meaningsOverlap(w.meaning, target.meaning)) score += 5; // 訳語が部分的に重なる
+      if (scenesOverlap(w.example_scene, target.example_scene)) score += 3; // 同じビジネス場面
+      if (!posDiffers(w.pos, target.pos)) score += 1; // 品詞が重なる
       // 同スコア内はランダムに散らす
       return { w, score: score + Math.random() * 0.9 };
     })

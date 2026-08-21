@@ -15,13 +15,39 @@ const empty = {
   streak: 0,
 };
 
+const asIdArray = (v) => (Array.isArray(v) ? v.filter((n) => Number.isInteger(n)) : []);
+const asCount = (v) => (Number.isFinite(v) && v >= 0 ? v : 0);
+
+/**
+ * 保存済みの進捗を読む。
+ * localStorage の中身はユーザーが書き換えられるうえ、旧スキーマが残ることもあるため、
+ * 形が違う値は捨てて初期値に寄せる（1問ごとの書き込みで落ちないようにするため）。
+ */
 export function loadProgress() {
   if (typeof window === 'undefined') return { ...empty };
   try {
     const raw = window.localStorage.getItem(KEY);
     if (!raw) return { ...empty };
     const saved = JSON.parse(raw);
-    return { ...empty, ...saved, errorTypes: { ...empty.errorTypes, ...(saved.errorTypes || {}) } };
+    if (!saved || typeof saved !== 'object') return { ...empty };
+
+    const errorTypes = {};
+    if (saved.errorTypes && typeof saved.errorTypes === 'object') {
+      for (const key of Object.keys(ERROR_TYPES)) {
+        errorTypes[key] = asCount(saved.errorTypes[key]);
+      }
+    }
+
+    return {
+      learnedIds: asIdArray(saved.learnedIds),
+      reviewIds: asIdArray(saved.reviewIds),
+      errorTypes,
+      totalAnswered: asCount(saved.totalAnswered),
+      totalCorrect: asCount(saved.totalCorrect),
+      sessions: asCount(saved.sessions),
+      lastDate: typeof saved.lastDate === 'string' ? saved.lastDate : null,
+      streak: asCount(saved.streak),
+    };
   } catch {
     return { ...empty };
   }

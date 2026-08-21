@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { buildSession } from '@/lib/words';
 import { recordAnswer, recordSessionDone, getStats, resetProgress } from '@/lib/progress';
 import { ERROR_TYPES } from '@/lib/errorTypes';
@@ -24,10 +24,15 @@ function toCloze(sentence, word) {
   if (!sentence || !word) return null;
   const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const stem = word.replace(/(e|y)$/i, '');
-  const patterns = [
-    new RegExp(`\\b${escape(word)}\\b`, 'i'),
-    new RegExp(`\\b${escape(stem)}\\w*\\b`, 'i'),
-  ];
+  // 1) まず完全一致
+  const patterns = [new RegExp(`\\b${escape(word)}\\b`, 'i')];
+  // 2) 語尾変化（customer→customers、attend→attended）
+  // 3) 語末の e/y が落ちる変化（increase→increased、supply→supplies）
+  // 短い語での前方一致は無関係な語まで隠すため、4文字未満では使わない。
+  if (word.length >= 4) patterns.push(new RegExp(`\\b${escape(word)}\\w*\\b`, 'i'));
+  if (stem.length >= 4 && stem !== word) {
+    patterns.push(new RegExp(`\\b${escape(stem)}\\w*\\b`, 'i'));
+  }
   for (const re of patterns) {
     const m = sentence.match(re);
     if (m) {
@@ -54,6 +59,9 @@ export default function Home() {
   const [fbLoading, setFbLoading] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [results, setResults] = useState([]);
+  // セッションを識別する連番。回答中に「やめる」→新セッション開始された場合に
+  // 前セッションの遅れて返ってきた回答を捨てるために使う
+  const sessionRef = useRef(0);
 
   // 結果画面
   const [summary, setSummary] = useState(null);
@@ -64,6 +72,7 @@ export default function Home() {
   }, []);
 
   function start() {
+    sessionRef.current += 1;
     const s = getStats();
     const qs = buildSession({ level, learnedIds: s.learnedIds, reviewIds: s.reviewIds });
     setQuestions(qs);
@@ -80,6 +89,7 @@ export default function Home() {
 
   async function choose(opt) {
     if (selected || !current) return;
+    const session = sessionRef.current;
     setSelected(opt);
     setRevealed(false);
     setFbLoading(true);
@@ -122,6 +132,9 @@ export default function Home() {
         ai: false,
       };
     }
+
+    // 応答を待っている間に別セッションが始まっていたら、この回答は捨てる
+    if (sessionRef.current !== session) return;
 
     // 誤答タイプまで含めて、1問につき1回だけ進捗に書き込む
     const errorType = correct ? null : fb?.error_type || 'memory';
