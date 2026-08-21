@@ -54,6 +54,7 @@ function toOption(w, correct) {
     word: w.word,
     pos: w.pos,
     scene: w.example_scene,
+    similar: w.similar,
     correct,
   };
 }
@@ -111,10 +112,14 @@ export function buildSession({ level = 0, count = 10, learnedIds = [], reviewIds
   const seen = shuffle(pool.filter((w) => learned.has(w.id) && !reviewSet.has(w.id)));
   const rest = [...unseen, ...seen].slice(0, Math.max(0, count - reviewTargets.length));
 
+  // 4問目以降にも復習キューの語が紛れ込むことがあるため、
+  // 「復習キューに載っている語」はすべて復習扱いにする（バッジ表示・AIへの履歴通知を揃える）
+  const inQueue = new Set(reviewIds);
+
   // 復習問題は先頭に固定、残りはシャッフルして並べる
   const questions = [
     ...reviewTargets.map((t) => buildQuestion(t, words, true)),
-    ...shuffle(rest).map((t) => buildQuestion(t, words, false)),
+    ...shuffle(rest).map((t) => buildQuestion(t, words, inQueue.has(t.id))),
   ];
 
   return questions;

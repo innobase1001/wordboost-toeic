@@ -9,10 +9,7 @@
 //   - APIキーが設定されている場合は、この結果をClaude APIの応答で上書きする。
 // =====================================================================
 import pack from '@/data/coach_pack.json';
-import wordlist from '@/data/toeic_wordlist.json';
 import { ERROR_TYPES } from './errorTypes';
-
-const byWord = new Map(wordlist.map((w) => [w.word.toLowerCase(), w]));
 
 export function getPrebaked(wordId) {
   return pack[String(wordId)] || null;
@@ -27,17 +24,21 @@ function similarList(similar) {
  * 誤答タイプを判定する。
  * 優先度: 類似語の混同 > 品詞の取り違え > 場面イメージ違い > 記憶が薄い
  */
-export function classifyError({ word, pos, similar, exampleScene, chosenWord, chosenPos, chosenScene }) {
+export function classifyError({
+  word, pos, similar, exampleScene,
+  chosenWord, chosenPos, chosenScene, chosenSimilar,
+}) {
   if (!chosenWord) return 'memory';
 
+  // 出題語・誤答語の双方の similar を突き合わせる
+  // （同じ綴りで意味違いの見出しが複数あるため、選択肢が持つ similar をそのまま使う）
   const targetSimilar = similarList(similar);
-  const chosen = byWord.get(String(chosenWord).toLowerCase()) || null;
-  const chosenSimilar = similarList(chosen?.similar);
+  const wrongSimilar = similarList(chosenSimilar);
 
   // 互いに「混同しやすい類似語」として登録されていれば混同
   if (
-    targetSimilar.includes(chosenWord.toLowerCase()) ||
-    chosenSimilar.includes(String(word).toLowerCase())
+    targetSimilar.includes(String(chosenWord).toLowerCase()) ||
+    wrongSimilar.includes(String(word).toLowerCase())
   ) {
     return 'confusion';
   }
@@ -53,7 +54,7 @@ function buildReason(type, p) {
     case 'confusion':
       return `${chosenWord ? `${chosenWord}（${chosenMeaning}）` : `「${chosenMeaning}」`}と混同したようです。${word} は「${meaning}」で、${exampleScene}の場面で使われます。特に ${similar} との違いを意識すると迷いが減ります。`;
     case 'pos':
-      return `選んだ「${chosenMeaning}」は${chosenPos}の意味でした。${word} は${pos}なので、文の中での働きが違います。品詞から絞り込むと選択肢を2つ減らせます。`;
+      return `選んだ「${chosenMeaning}」は${chosenPos}の意味でした。${word} は${pos}なので、文の中での働きが違います。選択肢の品詞から先に絞り込むと、迷いが減ります。`;
     case 'scene':
       return `同じ「${exampleScene}」の場面で使われる語どうしの取り違えです。${word} は「${meaning}」という一点で区別しましょう。`;
     default:
@@ -77,6 +78,7 @@ export function localFeedback(p) {
         chosenWord: p.chosenWord,
         chosenPos: p.chosenPos,
         chosenScene: p.chosenScene,
+        chosenSimilar: p.chosenSimilar,
       });
 
   return {
@@ -84,7 +86,7 @@ export function localFeedback(p) {
     error_type: errorType,
     example_en: pre.en || '',
     example_ja: pre.ja || '',
-    tip: pre.tip || `${p.similar} との違いを意識すると定着します。`,
+    tip: pre.tip || (p.similar ? `${p.similar} との違いを意識すると定着します。` : `${p.word} は「${p.meaning}」。例文ごと覚えると定着します。`),
     ai: false,
   };
 }
@@ -118,7 +120,7 @@ export function localSummary({ total, correctCount, results, learnedTotal, weakn
     : '間違いゼロでした。次はレベルを1つ上げて、まだ会っていない単語を増やしていきましょう。';
 
   const focus = wrong.length
-    ? `${wrong.slice(0, 3).map((r) => `${r.word}（${r.meaning}）`).join('、')} — 次回の最初の3問に自動で再登場します。`
+    ? `${wrong.slice(0, 3).map((r) => `${r.word}（${r.meaning}）`).join('、')} — 復習キューに入ったので、次のセッションで再登場します。`
     : `${right.slice(-2).map((r) => r.word).join('、')} を例文ごと音読して、「使える」状態まで持っていきましょう。`;
 
   const weakLine = weakness?.topLabel

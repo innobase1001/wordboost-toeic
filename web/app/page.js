@@ -98,6 +98,7 @@ export default function Home() {
       chosenWord: opt.word,
       chosenPos: opt.pos,
       chosenScene: opt.scene,
+      chosenSimilar: opt.similar,
       correct,
       isReview: current.isReview,
       weaknessLabel: stats?.weakness?.topLabel || null,

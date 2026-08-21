@@ -56,13 +56,21 @@ export function recordAnswer(wordId, correct, errorType) {
   return p;
 }
 
+// 端末のローカル日付を YYYY-MM-DD で返す
+// （toISOString() はUTCになり、日本時間だと日付の境目が朝9時にずれてしまう）
+function localDate(ts = Date.now()) {
+  const d = new Date(ts);
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
 // セッション終了時に呼ぶ（連続学習日数を更新）
 export function recordSessionDone() {
   const p = loadProgress();
   p.sessions += 1;
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDate();
   if (p.lastDate !== today) {
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    const yesterday = localDate(Date.now() - 86400000);
     p.streak = p.lastDate === yesterday ? (p.streak || 0) + 1 : 1;
     p.lastDate = today;
   } else if (!p.streak) {
