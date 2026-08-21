@@ -55,7 +55,12 @@ npm run dev   # http://localhost:3000
 | 対象 | Vercelの Root Directory | ビルド | 出力 |
 | --- | --- | --- | --- |
 | **提出用アプリ（Next.js）** | **`web`** | Next.js自動検出 | `.next` |
-| Expo版プロトタイプ（任意） | `./`（ルート） | `expo export -p web`（ルートの `vercel.json`） | `dist` |
+| Expo版プロトタイプ（任意） | `./`（ルート） | `expo export -p web`（Vercelの画面で Build Command に指定） | `dist` |
 
+> ⚠️ リポジトリ直下に `vercel.json` を置くと、Root Directory を `web` にしても
+> そちらが優先され Next.js のビルドが壊れます（`expo: command not found`）。
+> Expo版を公開する場合は、Vercelプロジェクトの Build & Deployment 画面で
+> Build Command に `expo export -p web`、Output Directory に `dist` を指定してください。
+>
 > ⚠️ Root Directory を `./` のままにすると、Expo版（＝提出対象外）が公開されます。
 > 提出用URLを作るときは必ず **Root Directory に `web`** を指定してください。
