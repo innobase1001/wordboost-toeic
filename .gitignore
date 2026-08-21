@@ -39,3 +39,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# 運営配布素材（原本は公開しない。アプリが使う単語データは web/data/ に配置）
+_materials/
