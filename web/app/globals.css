@@ -54,6 +54,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .statLabel { display: block; color: var(--sub); font-size: 13px; font-weight: 700; margin-top: 2px; }
 .bar { height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; margin-top: 12px; }
 .barFill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--secondary)); border-radius: 5px; transition: width .4s; }
+.statNote { display: block; color: var(--sub); font-size: 11px; font-weight: 700; margin-top: 8px; opacity: .85; }
 
 .statRow { display: flex; gap: 10px; }
 .miniStat {
@@ -254,3 +255,194 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-size: 13px;
   font-weight: 800;
 }
+
+/* ---------- 英検4級モード選択 ---------- */
+.modeGrid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.modeBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: var(--ink);
+  transition: border-color .15s, transform .1s;
+}
+.modeBtn:active { transform: scale(.99); }
+.modeBtn.on { border-color: var(--purple); background: #faf6ff; }
+.modeTop { display: flex; align-items: center; gap: 8px; }
+.modeEmoji { font-size: 18px; }
+.modeTop b { font-size: 15px; }
+.modeExam {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--purple);
+  background: #f3ecff;
+  border-radius: 999px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.modeDesc { font-size: 12px; color: var(--sub); line-height: 1.45; }
+.modeMeta { font-size: 11px; font-weight: 700; color: var(--sub); }
+
+/* ---------- 技能別の内訳 ---------- */
+.skillRow { display: flex; gap: 8px; margin-top: 14px; }
+.skillCell {
+  flex: 1;
+  text-align: center;
+  background: #fbf8f3;
+  border-radius: 12px;
+  padding: 8px 4px;
+}
+.skillCell b { display: block; font-size: 16px; font-weight: 900; color: var(--purple); }
+.skillCell span { font-size: 10px; font-weight: 700; color: var(--sub); }
+
+/* ---------- 出題の共通パーツ ---------- */
+.examTag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--purple);
+  background: #f3ecff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+}
+.qSentence { font-size: 19px; font-weight: 800; line-height: 1.6; margin: 4px 0 2px; }
+.rowBtns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.rowBtns.center { justify-content: center; }
+.miniBtn {
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.miniBtn:disabled { opacity: .4; cursor: default; }
+.miniBtn.primary { background: var(--purple); border-color: var(--purple); color: #fff; }
+.miniBtn.ghostMini { background: rgba(255, 255, 255, .22); border-color: rgba(255, 255, 255, .5); color: #fff; }
+.speakBtn {
+  background: none;
+  font-size: 15px;
+  padding: 0 2px;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* ---------- リスニング ---------- */
+.audioCard {
+  background: var(--surface);
+  border: 2px dashed var(--secondary);
+  border-radius: 18px;
+  padding: 18px 16px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.audioHint { font-size: 12px; font-weight: 700; color: var(--sub); }
+.playBtn {
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-size: 15px;
+  font-weight: 900;
+}
+.optAudio { display: inline-flex; align-items: center; gap: 12px; }
+.optAudio b { font-size: 15px; }
+.optPlay { font-size: 12px; font-weight: 800; color: var(--purple); }
+
+/* ---------- 会話 ---------- */
+.dialogCard {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.dialogLine { font-size: 14px; line-height: 1.7; }
+.dialogLine .sp { font-weight: 900; color: var(--purple); }
+.hiddenLine { color: var(--sub); font-size: 12px; }
+
+/* ---------- 長文 ---------- */
+.passage {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.passageHead { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.passageHead b { font-size: 14px; }
+.passageType {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--sub);
+  background: #fbf8f3;
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+.passageBody {
+  font-family: inherit;
+  white-space: pre-wrap;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+/* ---------- 並べかえ ---------- */
+.orderBox {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.orderLine {
+  min-height: 46px;
+  font-size: 15px;
+  line-height: 1.7;
+  background: #fbf8f3;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.orderLine .ph { color: var(--sub); }
+.chunks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chunk {
+  background: #fff;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.chunk.used, .chunk:disabled { opacity: .3; cursor: default; }
+
+/* ---------- 結果: まちがえた問題 ---------- */
+.wrongList { list-style: none; margin-top: 8px; }
+.wrongList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.wrongList li:last-child { border-bottom: none; }
+.wrongTag {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--sub);
+  background: #fbf8f3;
+  border-radius: 999px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.wrongLabel { color: var(--sub); }

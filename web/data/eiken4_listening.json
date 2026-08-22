@@ -1,0 +1,292 @@
+[
+  {
+    "id": 1,
+    "part": 2,
+    "type": "dialog",
+    "scene": "学校・友だち",
+    "script": [
+      { "sp": "A", "text": "Ken, are you going to the library after school?" },
+      { "sp": "B", "text": "No. I have soccer practice today. I'll go there tomorrow." }
+    ],
+    "question": "When will Ken go to the library?",
+    "choices": ["Today.", "Tomorrow.", "Next Monday.", "After dinner."],
+    "answer": 1,
+    "ja": "A: ケン、放課後に図書館へ行くの？ / B: ううん。今日はサッカーの練習があるんだ。明日行くよ。",
+    "explain": "「今日は練習がある、明日行く」と言っています。today が聞こえても、それは行かない日である点に注意しましょう。"
+  },
+  {
+    "id": 2,
+    "part": 2,
+    "type": "dialog",
+    "scene": "食事・レストラン",
+    "script": [
+      { "sp": "A", "text": "What would you like, Emi?" },
+      { "sp": "B", "text": "I'd like a sandwich and tea, please." }
+    ],
+    "question": "What will Emi have?",
+    "choices": ["A hamburger and juice.", "A sandwich and tea.", "Only tea.", "A cake and milk."],
+    "answer": 1,
+    "ja": "A: エミ、何にする？ / B: サンドイッチと紅茶をお願いします。",
+    "explain": "I'd like ～ は注文の表現です。and でつながれた2つの品を両方聞き取るのがポイントです。"
+  },
+  {
+    "id": 3,
+    "part": 2,
+    "type": "dialog",
+    "scene": "おでかけ・駅",
+    "script": [
+      { "sp": "A", "text": "Excuse me. What time does the next train leave?" },
+      { "sp": "B", "text": "At three fifteen. It leaves from Platform 2." }
+    ],
+    "question": "What time does the next train leave?",
+    "choices": ["At two fifteen.", "At three fifteen.", "At three fifty.", "At two fifty."],
+    "answer": 1,
+    "ja": "A: すみません、次の電車は何時に出ますか。 / B: 3時15分です。2番ホームから出ます。",
+    "explain": "fifteen（15）と fifty（50）は音が似ています。語の終わりの -teen を強く読む点で聞き分けましょう。"
+  },
+  {
+    "id": 4,
+    "part": 2,
+    "type": "dialog",
+    "scene": "家・かぞく",
+    "script": [
+      { "sp": "A", "text": "Where is Mom?" },
+      { "sp": "B", "text": "She's in the kitchen. She's making dinner." }
+    ],
+    "question": "What is the mother doing?",
+    "choices": ["She is cleaning her room.", "She is making dinner.", "She is watching TV.", "She is going shopping."],
+    "answer": 1,
+    "ja": "A: お母さんはどこ？ / B: 台所にいるよ。夕食を作っているところ。",
+    "explain": "現在進行形（is making）を聞き取る問題です。場所と動作の両方が問われることがあります。"
+  },
+  {
+    "id": 5,
+    "part": 2,
+    "type": "dialog",
+    "scene": "買い物・お店",
+    "script": [
+      { "sp": "A", "text": "How much is this cap?" },
+      { "sp": "B", "text": "It's 1,200 yen. The blue one is 900 yen." }
+    ],
+    "question": "How much is the blue cap?",
+    "choices": ["900 yen.", "1,200 yen.", "1,900 yen.", "2,100 yen."],
+    "answer": 0,
+    "ja": "A: このぼうしはいくらですか。 / B: 1200円です。青いのは900円です。",
+    "explain": "2つの値段が出てきます。質問は blue one（青いぼうし）なので、あとから言われた900円が答えです。"
+  },
+  {
+    "id": 6,
+    "part": 2,
+    "type": "dialog",
+    "scene": "学校・部活",
+    "script": [
+      { "sp": "A", "text": "Do you play the guitar, Yuki?" },
+      { "sp": "B", "text": "No, but my brother does. I play the piano." }
+    ],
+    "question": "What does Yuki play?",
+    "choices": ["The guitar.", "The piano.", "The violin.", "Nothing."],
+    "answer": 1,
+    "ja": "A: ユキ、ギターをひくの？ / B: ううん、でも兄がひくよ。私はピアノをひくの。",
+    "explain": "guitar は「兄がひく」もの。だれが何をするかを分けて聞き取るのが第2部のコツです。"
+  },
+  {
+    "id": 7,
+    "part": 2,
+    "type": "dialog",
+    "scene": "天気・よほう",
+    "script": [
+      { "sp": "A", "text": "It's raining now. Can we play tennis?" },
+      { "sp": "B", "text": "The weather report says it will be sunny this afternoon." }
+    ],
+    "question": "How will the weather be this afternoon?",
+    "choices": ["Rainy.", "Cloudy.", "Sunny.", "Snowy."],
+    "answer": 2,
+    "ja": "A: 今、雨がふっているね。テニスできるかな。 / B: 天気予報だと午後は晴れるって。",
+    "explain": "今の天気（雨）と午後の天気（晴れ）が出てきます。質問がどの時間かを必ず確かめましょう。"
+  },
+  {
+    "id": 8,
+    "part": 2,
+    "type": "dialog",
+    "scene": "友だち・誕生日",
+    "script": [
+      { "sp": "A", "text": "What are you going to give Ken for his birthday?" },
+      { "sp": "B", "text": "I bought a book last week. My sister will make a cake." }
+    ],
+    "question": "What did the girl buy?",
+    "choices": ["A cake.", "A book.", "A racket.", "A CD."],
+    "answer": 1,
+    "ja": "A: ケンの誕生日に何をあげるの？ / B: 先週、本を買ったよ。姉はケーキを作ってくれるの。",
+    "explain": "buy したのは本、cake を作るのは姉です。動作をした人と物をセットで聞き取りましょう。"
+  },
+  {
+    "id": 9,
+    "part": 2,
+    "type": "dialog",
+    "scene": "体調・かぜ",
+    "script": [
+      { "sp": "A", "text": "You don't look well, Tom." },
+      { "sp": "B", "text": "I have a cold. I'm going to see a doctor this afternoon." }
+    ],
+    "question": "What will Tom do this afternoon?",
+    "choices": ["Go to school.", "See a doctor.", "Play soccer.", "Stay in bed."],
+    "answer": 1,
+    "ja": "A: トム、具合が悪そうだね。 / B: かぜをひいたんだ。午後に医者にみてもらうよ。",
+    "explain": "be going to ～ は「これからすること」。未来の予定をたずねる質問と結びつけて聞きます。"
+  },
+  {
+    "id": 10,
+    "part": 2,
+    "type": "dialog",
+    "scene": "おでかけ・道案内",
+    "script": [
+      { "sp": "A", "text": "Excuse me. Where is the post office?" },
+      { "sp": "B", "text": "Go straight and turn right at the second corner. It's next to the bank." }
+    ],
+    "question": "Where is the post office?",
+    "choices": ["Next to the bank.", "In front of the station.", "Behind the school.", "Near the park."],
+    "answer": 0,
+    "ja": "A: すみません、郵便局はどこですか。 / B: まっすぐ行って2つ目のかどを右に曲がってください。銀行のとなりです。",
+    "explain": "next to ～（～のとなり）、in front of ～（～の前）、behind ～（～の後ろ）は位置を表す必修表現です。"
+  },
+  {
+    "id": 11,
+    "part": 3,
+    "type": "passage",
+    "scene": "学校・行事",
+    "script": [
+      { "sp": "", "text": "Yuki is a junior high school student. She likes music very much. She practices the piano every day after school. Next Sunday, she will play the piano at the school festival." }
+    ],
+    "question": "What will Yuki do next Sunday?",
+    "choices": ["She will study math.", "She will play the piano.", "She will go shopping.", "She will visit her aunt."],
+    "answer": 1,
+    "ja": "ユキは中学生です。彼女は音楽が大好きです。毎日放課後にピアノを練習します。次の日曜日、彼女は学校の文化祭でピアノをひきます。",
+    "explain": "第3部は短い説明文を聞いて答える形式です。最後の文に未来の予定が来ることが多いので、終わりまで集中して聞きましょう。"
+  },
+  {
+    "id": 12,
+    "part": 3,
+    "type": "passage",
+    "scene": "家・かぞく",
+    "script": [
+      { "sp": "", "text": "Tom has two brothers and one sister. His older brother is a college student. His younger brother and sister go to elementary school. Tom is fourteen years old." }
+    ],
+    "question": "How many brothers does Tom have?",
+    "choices": ["One.", "Two.", "Three.", "Four."],
+    "answer": 1,
+    "ja": "トムには2人の兄弟と1人の姉妹がいます。上の兄は大学生です。弟と妹は小学校に通っています。トムは14歳です。",
+    "explain": "数をたずねる問題です。brothers（2人）と sister（1人）を分けて数えましょう。"
+  },
+  {
+    "id": 13,
+    "part": 3,
+    "type": "passage",
+    "scene": "おでかけ・旅行",
+    "script": [
+      { "sp": "", "text": "Last summer, Emi went to Okinawa with her family. They stayed there for five days. They swam in the sea every day. Emi took many pictures of the beautiful beach." }
+    ],
+    "question": "How long did Emi stay in Okinawa?",
+    "choices": ["For three days.", "For four days.", "For five days.", "For one week."],
+    "answer": 2,
+    "ja": "去年の夏、エミは家族と沖縄へ行きました。彼らはそこに5日間泊まりました。毎日海で泳ぎました。エミは美しい浜辺の写真をたくさんとりました。",
+    "explain": "How long ～? は期間をたずねる質問。for + 数 + days の部分に集中して聞き取ります。"
+  },
+  {
+    "id": 14,
+    "part": 3,
+    "type": "passage",
+    "scene": "学校・とうこう",
+    "script": [
+      { "sp": "", "text": "Ken usually goes to school by bike. But it rained this morning, so his father took him to school by car. He arrived at school at eight." }
+    ],
+    "question": "How did Ken go to school this morning?",
+    "choices": ["By bike.", "By bus.", "By car.", "On foot."],
+    "answer": 2,
+    "ja": "ケンはふだん自転車で学校へ行きます。でも今朝は雨がふったので、父が車で学校まで送ってくれました。彼は8時に学校に着きました。",
+    "explain": "usually（ふだん）と this morning（今朝）で手段がちがいます。but のあとに答えが来ることが多いので注意しましょう。"
+  },
+  {
+    "id": 15,
+    "part": 3,
+    "type": "passage",
+    "scene": "趣味・しゅみ",
+    "script": [
+      { "sp": "", "text": "My name is Sara. My hobby is collecting stamps. I have about 300 stamps from many countries. My favorite one is from Australia. My grandfather gave it to me." }
+    ],
+    "question": "What is Sara's hobby?",
+    "choices": ["Taking pictures.", "Collecting stamps.", "Reading books.", "Playing tennis."],
+    "answer": 1,
+    "ja": "私の名前はサラです。私のしゅみは切手集めです。いろいろな国の切手を約300枚持っています。お気に入りはオーストラリアのものです。祖父がくれました。",
+    "explain": "My hobby is ～ing の部分にしゅみが来ます。自己しょうかいの文は最初の2文に大事な情報が集まります。"
+  },
+  {
+    "id": 16,
+    "part": 3,
+    "type": "passage",
+    "scene": "学校・部活",
+    "script": [
+      { "sp": "", "text": "Our tennis club practices on Tuesdays and Thursdays. Last week, we had a game with another school. We lost, but we had a good time. Our next game is in October." }
+    ],
+    "question": "When does the club practice?",
+    "choices": ["On Mondays and Wednesdays.", "On Tuesdays and Thursdays.", "On Fridays.", "Every day."],
+    "answer": 1,
+    "ja": "私たちのテニス部は火曜日と木曜日に練習します。先週、別の学校と試合をしました。負けましたが、楽しい時間を過ごしました。次の試合は10月です。",
+    "explain": "曜日は聞き取りにくいので、Tuesday と Thursday のちがいに慣れておきましょう。どちらも複数形で「毎週」の意味です。"
+  },
+  {
+    "id": 17,
+    "part": 3,
+    "type": "passage",
+    "scene": "食事・きゅうしょく",
+    "script": [
+      { "sp": "", "text": "I usually have bread and milk for breakfast. But on Sundays, my mother makes rice and soup. I like Sunday breakfast the best." }
+    ],
+    "question": "What does the speaker have for breakfast on Sundays?",
+    "choices": ["Bread and milk.", "Rice and soup.", "Eggs and juice.", "Nothing."],
+    "answer": 1,
+    "ja": "私はふだん朝食にパンと牛乳をとります。でも日曜日には母がごはんとスープを作ってくれます。私は日曜日の朝食がいちばん好きです。",
+    "explain": "usually と on Sundays で内容が変わります。質問がどちらの日のことかを必ず確かめてから選びます。"
+  },
+  {
+    "id": 18,
+    "part": 3,
+    "type": "passage",
+    "scene": "おでかけ・動物園",
+    "script": [
+      { "sp": "", "text": "Yesterday, I went to the zoo with my friends. We saw lions, elephants and many birds. My favorite animal was the elephant. We had lunch in the park near the zoo." }
+    ],
+    "question": "Where did they have lunch?",
+    "choices": ["At the zoo.", "At school.", "In the park.", "At a restaurant."],
+    "answer": 2,
+    "ja": "昨日、私は友だちと動物園へ行きました。ライオンやゾウ、たくさんの鳥を見ました。いちばん好きな動物はゾウでした。動物園の近くの公園で昼食を食べました。",
+    "explain": "場所が2つ（動物園と公園）出てきます。質問の「昼食を食べた場所」に当たる方を選びましょう。"
+  },
+  {
+    "id": 19,
+    "part": 3,
+    "type": "passage",
+    "scene": "時間・よてい",
+    "script": [
+      { "sp": "", "text": "The school festival will start at nine in the morning. The music concert begins at one in the afternoon. Please come to the gym before one." }
+    ],
+    "question": "What time does the music concert begin?",
+    "choices": ["At nine.", "At ten.", "At one.", "At three."],
+    "answer": 2,
+    "ja": "文化祭は午前9時に始まります。音楽のコンサートは午後1時に始まります。1時より前に体育館へ来てください。",
+    "explain": "時刻が3回出てきます。どの出来事の時刻かをセットで聞き取るのが得点のコツです。"
+  },
+  {
+    "id": 20,
+    "part": 3,
+    "type": "passage",
+    "scene": "仕事・しょくば",
+    "script": [
+      { "sp": "", "text": "My father is a cook. He works at a small restaurant near our house. He goes to work at ten and comes home at nine. He often makes dinner for us on Mondays." }
+    ],
+    "question": "What is the speaker's father?",
+    "choices": ["A teacher.", "A cook.", "A doctor.", "A farmer."],
+    "answer": 1,
+    "ja": "私の父は料理人です。家の近くの小さなレストランで働いています。10時に仕事へ行き、9時に帰ってきます。月曜日にはよく私たちに夕食を作ってくれます。",
+    "explain": "職業をたずねる問題です。What is ～? で職業を聞いていることに注意しましょう。最初の文に答えがあります。"
+  }
+]

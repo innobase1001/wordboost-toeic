@@ -1,0 +1,361 @@
+[
+  {
+    "id": 1,
+    "ja": "私は昨日、駅で友だちを待ちました。",
+    "chunks": [
+      "waited",
+      "for",
+      "my friend",
+      "at the station"
+    ],
+    "prefix": "I",
+    "suffix": "yesterday.",
+    "answer": "I waited for my friend at the station yesterday.",
+    "point": "wait for ～",
+    "explain": "wait のあとには必ず for が入ります。wait for + 人 をひとかたまりで覚えると、この形はまちがえません。"
+  },
+  {
+    "id": 2,
+    "ja": "私の姉はギターのひき方を知っています。",
+    "chunks": [
+      "knows",
+      "how",
+      "to play",
+      "the guitar"
+    ],
+    "prefix": "My sister",
+    "suffix": ".",
+    "answer": "My sister knows how to play the guitar.",
+    "point": "how to ～",
+    "explain": "how to + 動詞の原形 で「～のしかた」。know how to ～ / learn how to ～ の形でよく出ます。楽器には the をつけます。"
+  },
+  {
+    "id": 3,
+    "ja": "この本はあの本よりおもしろいです。",
+    "chunks": [
+      "is",
+      "more interesting",
+      "than",
+      "that one"
+    ],
+    "prefix": "This book",
+    "suffix": ".",
+    "answer": "This book is more interesting than that one.",
+    "point": "比較級 more ～ than",
+    "explain": "長い形容詞の比較級は more をつけます。interestinger とはしません。than のあとの one は book のくり返しをさける語です。"
+  },
+  {
+    "id": 4,
+    "ja": "私に水を1杯ください。",
+    "chunks": [
+      "give",
+      "me",
+      "a glass",
+      "of water"
+    ],
+    "prefix": "Please",
+    "suffix": ".",
+    "answer": "Please give me a glass of water.",
+    "point": "give + 人 + 物",
+    "explain": "give のあとは「人 → 物」の順です。a glass of water は数えられない水を数えるときの言い方です。"
+  },
+  {
+    "id": 5,
+    "ja": "私の父は毎朝コーヒーを飲みます。",
+    "chunks": [
+      "drinks",
+      "coffee",
+      "every",
+      "morning"
+    ],
+    "prefix": "My father",
+    "suffix": ".",
+    "answer": "My father drinks coffee every morning.",
+    "point": "三人称単数の s",
+    "explain": "主語が My father（三人称単数）なので、動詞に s がつきます。every morning は文の最後に置きます。"
+  },
+  {
+    "id": 6,
+    "ja": "あなたは何時に学校を出ますか。",
+    "chunks": [
+      "time",
+      "do",
+      "you",
+      "leave"
+    ],
+    "prefix": "What",
+    "suffix": "school?",
+    "answer": "What time do you leave school?",
+    "point": "What time do you ～?",
+    "explain": "疑問詞のあとは do + 主語 + 動詞の原形 の順。What time は2語でひとつの疑問詞として使います。"
+  },
+  {
+    "id": 7,
+    "ja": "私はケンほど速く走れません。",
+    "chunks": [
+      "can't",
+      "run",
+      "as fast",
+      "as Ken"
+    ],
+    "prefix": "I",
+    "suffix": ".",
+    "answer": "I can't run as fast as Ken.",
+    "point": "as ～ as",
+    "explain": "as + 形容詞や副詞 + as で「～と同じくらい」。否定にすると「～ほど…ない」の意味になります。"
+  },
+  {
+    "id": 8,
+    "ja": "私は宿題を終えるために早く起きました。",
+    "chunks": [
+      "got up",
+      "early",
+      "to finish",
+      "my homework"
+    ],
+    "prefix": "I",
+    "suffix": ".",
+    "answer": "I got up early to finish my homework.",
+    "point": "目的の to ～",
+    "explain": "to + 動詞の原形 で「～するために」という目的を表します。文の後ろに置くのがふつうです。"
+  },
+  {
+    "id": 9,
+    "ja": "テーブルの上に本が3冊あります。",
+    "chunks": [
+      "are",
+      "three books",
+      "on",
+      "the table"
+    ],
+    "prefix": "There",
+    "suffix": ".",
+    "answer": "There are three books on the table.",
+    "point": "There are ～",
+    "explain": "「～がある」は There is / There are。あとに続く名詞が複数なので are を使います。"
+  },
+  {
+    "id": 10,
+    "ja": "私は妹といっしょに犬の世話をします。",
+    "chunks": [
+      "take",
+      "care of",
+      "the dog",
+      "with my sister"
+    ],
+    "prefix": "I",
+    "suffix": ".",
+    "answer": "I take care of the dog with my sister.",
+    "point": "take care of ～",
+    "explain": "take care of ～ で「～の世話をする」。3語でひとかたまりの表現なので、まとめて覚えましょう。"
+  },
+  {
+    "id": 11,
+    "ja": "私はその映画を見て楽しみました。",
+    "chunks": [
+      "enjoyed",
+      "watching",
+      "the movie",
+      "very much"
+    ],
+    "prefix": "I",
+    "suffix": ".",
+    "answer": "I enjoyed watching the movie very much.",
+    "point": "enjoy + ～ing",
+    "explain": "enjoy のあとの動詞は必ず ～ing の形になります。enjoy to watch とは言いません。"
+  },
+  {
+    "id": 12,
+    "ja": "私の兄は今、部屋でテレビを見ています。",
+    "chunks": [
+      "is",
+      "watching TV",
+      "in",
+      "his room"
+    ],
+    "prefix": "My brother",
+    "suffix": "now.",
+    "answer": "My brother is watching TV in his room now.",
+    "point": "現在進行形",
+    "explain": "be動詞 + ～ing で「今～している」。now があるので進行形にします。"
+  },
+  {
+    "id": 13,
+    "ja": "私にあなたの写真を見せてください。",
+    "chunks": [
+      "show",
+      "me",
+      "your",
+      "pictures"
+    ],
+    "prefix": "Please",
+    "suffix": ".",
+    "answer": "Please show me your pictures.",
+    "point": "show + 人 + 物",
+    "explain": "show も give と同じで「人 → 物」の順。show me the way のような形でも出ます。"
+  },
+  {
+    "id": 14,
+    "ja": "私は3年前からこの町に住んでいます。",
+    "chunks": [
+      "have",
+      "lived",
+      "in this town",
+      "for"
+    ],
+    "prefix": "I",
+    "suffix": "three years.",
+    "answer": "I have lived in this town for three years.",
+    "point": "have + 過去分詞",
+    "explain": "have + 過去分詞 で「ずっと～している」。期間の長さには for、始まった時点には since を使います。"
+  },
+  {
+    "id": 15,
+    "ja": "この歌は世界中で有名です。",
+    "chunks": [
+      "is",
+      "famous",
+      "all over",
+      "the world"
+    ],
+    "prefix": "This song",
+    "suffix": ".",
+    "answer": "This song is famous all over the world.",
+    "point": "all over the world",
+    "explain": "all over the world は「世界中で」という決まった言い方。ひとかたまりで覚えましょう。"
+  },
+  {
+    "id": 16,
+    "ja": "私はあなたに手伝ってほしいです。",
+    "chunks": [
+      "want",
+      "you",
+      "to help",
+      "me"
+    ],
+    "prefix": "I",
+    "suffix": ".",
+    "answer": "I want you to help me.",
+    "point": "want + 人 + to ～",
+    "explain": "want + 人 + to + 動詞の原形 で「人に～してほしい」。I want to help（私が手伝いたい）とは意味がちがいます。"
+  },
+  {
+    "id": 17,
+    "ja": "駅への行き方を教えていただけますか。",
+    "chunks": [
+      "tell",
+      "me",
+      "the way",
+      "to the station"
+    ],
+    "prefix": "Could you",
+    "suffix": "?",
+    "answer": "Could you tell me the way to the station?",
+    "point": "the way to ～",
+    "explain": "the way to + 場所 で「～への道」。道案内でそのまま使える表現です。"
+  },
+  {
+    "id": 18,
+    "ja": "雨がふっていたので、私たちは家にいました。",
+    "chunks": [
+      "stayed",
+      "home",
+      "because",
+      "it was raining"
+    ],
+    "prefix": "We",
+    "suffix": ".",
+    "answer": "We stayed home because it was raining.",
+    "point": "because ～",
+    "explain": "because のあとには「主語 + 動詞」がきます。理由を後ろにつけ足す形です。"
+  },
+  {
+    "id": 19,
+    "ja": "私は将来、英語の先生になりたいです。",
+    "chunks": [
+      "want",
+      "to be",
+      "an English",
+      "teacher"
+    ],
+    "prefix": "I",
+    "suffix": "in the future.",
+    "answer": "I want to be an English teacher in the future.",
+    "point": "want to be ～",
+    "explain": "want to + 動詞の原形。English は母音で始まるので a ではなく an をつけます。"
+  },
+  {
+    "id": 20,
+    "ja": "その公園は私の家から遠くありません。",
+    "chunks": [
+      "is not",
+      "far",
+      "from",
+      "my house"
+    ],
+    "prefix": "The park",
+    "suffix": ".",
+    "answer": "The park is not far from my house.",
+    "point": "far from ～",
+    "explain": "far from ～ で「～から遠い」。near ～（～の近く）とセットで覚えましょう。"
+  },
+  {
+    "id": 21,
+    "ja": "あなたは何か食べるものを持っていますか。",
+    "chunks": [
+      "have",
+      "anything",
+      "to eat",
+      "with you"
+    ],
+    "prefix": "Do you",
+    "suffix": "?",
+    "answer": "Do you have anything to eat with you?",
+    "point": "anything to ～",
+    "explain": "something / anything のあとに to + 動詞 を置くと「～するための…」。疑問文では anything を使います。"
+  },
+  {
+    "id": 22,
+    "ja": "私の母は私よりも早く起きます。",
+    "chunks": [
+      "gets up",
+      "earlier",
+      "than",
+      "I do"
+    ],
+    "prefix": "My mother",
+    "suffix": ".",
+    "answer": "My mother gets up earlier than I do.",
+    "point": "比較級 -er than",
+    "explain": "短い語の比較級は -er。y で終わる early は y を i に変えて earlier になります。"
+  },
+  {
+    "id": 23,
+    "ja": "この写真をとったのはだれですか。",
+    "chunks": [
+      "took",
+      "this",
+      "picture"
+    ],
+    "prefix": "Who",
+    "suffix": "?",
+    "answer": "Who took this picture?",
+    "point": "疑問詞が主語の文",
+    "explain": "Who が主語のときは did を使わず、そのまま過去形の動詞を続けます。Who did take ～ とはしません。"
+  },
+  {
+    "id": 24,
+    "ja": "私は明日、おばを訪ねるつもりです。",
+    "chunks": [
+      "am",
+      "going to",
+      "visit",
+      "my aunt"
+    ],
+    "prefix": "I",
+    "suffix": "tomorrow.",
+    "answer": "I am going to visit my aunt tomorrow.",
+    "point": "be going to ～",
+    "explain": "be going to + 動詞の原形 で「～するつもりだ」。visit のあとに to は入りません。"
+  }
+]

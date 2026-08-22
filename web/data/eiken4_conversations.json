@@ -1,0 +1,364 @@
+[
+  {
+    "id": 1,
+    "scene": "学校・友だち",
+    "lines": [
+      { "sp": "A", "text": "What club are you in, Ken?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["I'm in the soccer club.", "It's ten o'clock.", "Yes, I like it.", "See you tomorrow."],
+    "answer": 0,
+    "ja": "A: ケン、何部に入っているの？ / B: サッカー部に入っているよ。",
+    "explain": "What club ～? は「何部か」をたずねる質問です。Yes / No では答えられないので「Yes, I like it.」は選べません。部活名を答えている選択肢を選びます。"
+  },
+  {
+    "id": 2,
+    "scene": "友だち・遊ぶ約束",
+    "lines": [
+      { "sp": "A", "text": "Do you want to go to the movies with me?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Sure. What time?", "It's my brother's.", "I'm from Osaka.", "No, it isn't."],
+    "answer": 0,
+    "ja": "A: いっしょに映画を見に行かない？ / B: いいよ。何時に？",
+    "explain": "さそいの表現には Sure.（いいよ）や Sounds good. で答えます。さそわれたあとに「何時？」と続けるのは自然な流れです。"
+  },
+  {
+    "id": 3,
+    "scene": "食事・レストラン",
+    "lines": [
+      { "sp": "A", "text": "May I take your order?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Yes, I'll have a hamburger.", "You're welcome.", "It's near the station.", "I went there last week."],
+    "answer": 0,
+    "ja": "A: ご注文をおうかがいします。 / B: はい、ハンバーガーをください。",
+    "explain": "May I take your order? はレストランの店員の決まり文句です。I'll have ～. で注文を伝えます。"
+  },
+  {
+    "id": 4,
+    "scene": "おでかけ・道案内",
+    "lines": [
+      { "sp": "A", "text": "Excuse me. Could you tell me the way to the library?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Sure. Go straight and turn left.", "I like reading books.", "It was very interesting.", "No, thank you."],
+    "answer": 0,
+    "ja": "A: すみません、図書館への道を教えていただけますか。 / B: はい。まっすぐ行って左に曲がってください。",
+    "explain": "道をたずねられたら、Go straight（まっすぐ行く）や turn left / right（曲がる）で答えます。道案内は4級リスニングの定番場面です。"
+  },
+  {
+    "id": 5,
+    "scene": "友だち・電話",
+    "lines": [
+      { "sp": "A", "text": "Hello. May I speak to Emi?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Sorry, she isn't home now.", "It's 500 yen.", "I'm fine, thank you.", "Yes, I can swim."],
+    "answer": 0,
+    "ja": "A: もしもし。エミさんをお願いします。 / B: ごめんなさい、今、彼女は家にいません。",
+    "explain": "May I speak to ～? は電話で相手を呼び出す表現。いないときは Sorry, she isn't home now. などと答えます。"
+  },
+  {
+    "id": 6,
+    "scene": "買い物・お店",
+    "lines": [
+      { "sp": "A", "text": "May I help you?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Yes, I'm looking for a T-shirt.", "That's a good idea.", "I have two brothers.", "It's Wednesday."],
+    "answer": 0,
+    "ja": "A: いらっしゃいませ。 / B: はい、Tシャツをさがしています。",
+    "explain": "May I help you? はお店の決まり文句です。I'm looking for ～. で「～をさがしています」と答えます。"
+  },
+  {
+    "id": 7,
+    "scene": "体調・かぜ",
+    "lines": [
+      { "sp": "A", "text": "You look tired. Are you OK?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["I have a headache.", "It's under the desk.", "She is my sister.", "I'll take it."],
+    "answer": 0,
+    "ja": "A: つかれているみたいだね。だいじょうぶ？ / B: 頭がいたいんだ。",
+    "explain": "体調を心配されたら、I have a headache.（頭がいたい）や I have a cold.（かぜをひいている）で答えます。"
+  },
+  {
+    "id": 8,
+    "scene": "学校・宿題",
+    "lines": [
+      { "sp": "A", "text": "Did you finish your math homework?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Not yet. It's difficult.", "I'm going to Kyoto.", "He is a teacher.", "Three times a week."],
+    "answer": 0,
+    "ja": "A: 数学の宿題は終わった？ / B: まだだよ。むずかしくて。",
+    "explain": "Did you ～? には Yes / No のほか、Not yet.（まだです）でも答えられます。4級の会話文でよく出る答え方です。"
+  },
+  {
+    "id": 9,
+    "scene": "友だち・誕生日",
+    "lines": [
+      { "sp": "A", "text": "Happy birthday! This is for you." },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Thank you. Can I open it?", "I'm sorry to hear that.", "No, I don't have one.", "It takes ten minutes."],
+    "answer": 0,
+    "ja": "A: 誕生日おめでとう！これ、きみにだよ。 / B: ありがとう。開けてもいい？",
+    "explain": "This is for you. はプレゼントをわたすときの表現。まずお礼を言うのが自然な流れです。"
+  },
+  {
+    "id": 10,
+    "scene": "時間・よてい",
+    "lines": [
+      { "sp": "A", "text": "What time does the concert start?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["At six thirty.", "In the gym.", "With my friends.", "Because it's fun."],
+    "answer": 0,
+    "ja": "A: コンサートは何時に始まるの？ / B: 6時30分だよ。",
+    "explain": "What time ～? には時刻で答えます。場所を聞く Where ～? や理由を聞く Why ～? と混同しないようにしましょう。"
+  },
+  {
+    "id": 11,
+    "scene": "おでかけ・電車",
+    "lines": [
+      { "sp": "A", "text": "Excuse me. Is this seat free?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Yes, please sit down.", "It's five dollars.", "I like trains, too.", "No, I'm not tired."],
+    "answer": 0,
+    "ja": "A: すみません、この席は空いていますか。 / B: はい、どうぞおすわりください。",
+    "explain": "Is this seat free? は「この席は空いていますか」。空いていれば Yes, please sit down. や Go ahead. と答えます。"
+  },
+  {
+    "id": 12,
+    "scene": "学校・図書室",
+    "lines": [
+      { "sp": "A", "text": "How many books can I borrow?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["You can borrow three.", "It's on the third floor.", "Next Monday.", "Yes, you can."],
+    "answer": 0,
+    "ja": "A: 何冊借りられますか。 / B: 3冊借りられます。",
+    "explain": "How many ～? は数をたずねる質問なので、数で答えます。Yes / No で答えられない点に注意しましょう。"
+  },
+  {
+    "id": 13,
+    "scene": "友だち・手紙",
+    "lines": [
+      { "sp": "A", "text": "Thank you for your help." },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["You're welcome.", "Here you are.", "Nice to meet you.", "I'd love to."],
+    "answer": 0,
+    "ja": "A: 手伝ってくれてありがとう。 / B: どういたしまして。",
+    "explain": "Thank you. への返事は You're welcome. が基本。Here you are.（はい、どうぞ）は物をわたすときの表現です。"
+  },
+  {
+    "id": 14,
+    "scene": "天気・よほう",
+    "lines": [
+      { "sp": "A", "text": "How is the weather in Tokyo today?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["It's cloudy and cold.", "It's ten kilometers.", "I go there by bus.", "Yes, I think so."],
+    "answer": 0,
+    "ja": "A: 今日の東京の天気はどう？ / B: くもりで寒いよ。",
+    "explain": "天気をたずねる How is the weather? には、It's sunny / cloudy / rainy のように it を主語にして答えます。"
+  },
+  {
+    "id": 15,
+    "scene": "家・手伝い",
+    "lines": [
+      { "sp": "A", "text": "Can you help me wash the dishes?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["OK, just a minute.", "It's my favorite.", "She lives in Nagoya.", "Twice a month."],
+    "answer": 0,
+    "ja": "A: 皿洗いを手伝ってくれる？ / B: いいよ、ちょっと待ってね。",
+    "explain": "Can you ～? はたのむ表現です。引き受けるときは OK / Sure、ことわるときは Sorry, I can't. と答えます。"
+  },
+  {
+    "id": 16,
+    "scene": "スポーツ・試合",
+    "lines": [
+      { "sp": "A", "text": "Who won the game yesterday?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Our team did.", "At the stadium.", "It was exciting.", "For two hours."],
+    "answer": 0,
+    "ja": "A: 昨日の試合はどっちが勝ったの？ / B: 私たちのチームだよ。",
+    "explain": "Who ～? には人やチームで答えます。won のくり返しをさけて did を使うのが自然な英語です。"
+  },
+  {
+    "id": 17,
+    "scene": "おでかけ・旅行",
+    "lines": [
+      { "sp": "A", "text": "Where did you go during the summer vacation?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["I went to Hokkaido with my family.", "I'm going to study English.", "It's very hot today.", "Yes, I did my best."],
+    "answer": 0,
+    "ja": "A: 夏休みはどこへ行ったの？ / B: 家族と北海道へ行ったよ。",
+    "explain": "Where did you go ～? は過去の場所をたずねる質問。答えも過去形（went）にそろえるのがポイントです。"
+  },
+  {
+    "id": 18,
+    "scene": "学校・先生",
+    "lines": [
+      { "sp": "A", "text": "I'm sorry I'm late, Ms. Brown." },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["That's all right. Please sit down.", "You're right. It's mine.", "I'm happy to hear that.", "Let's go together."],
+    "answer": 0,
+    "ja": "A: おくれてすみません、ブラウン先生。 / B: だいじょうぶですよ。すわってください。",
+    "explain": "I'm sorry. への返事は That's all right. / No problem. が定番です。Thank you への返事とまちがえないこと。"
+  },
+  {
+    "id": 19,
+    "scene": "買い物・ねだん",
+    "lines": [
+      { "sp": "A", "text": "How much is this dictionary?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["It's 2,000 yen.", "It's very useful.", "About twenty pages.", "In the bookstore."],
+    "answer": 0,
+    "ja": "A: この辞書はいくらですか。 / B: 2000円です。",
+    "explain": "How much ～? はねだんをたずねる質問。数の多さをたずねる How many ～? との区別が4級の頻出ポイントです。"
+  },
+  {
+    "id": 20,
+    "scene": "友だち・遊ぶ約束",
+    "lines": [
+      { "sp": "A", "text": "Let's play tennis this afternoon." },
+      { "sp": "B", "text": null },
+      { "sp": "A", "text": "OK. How about tomorrow?" }
+    ],
+    "choices": ["Sorry, I have to study today.", "Yes, it's my racket.", "I played it last year.", "It's in my bag."],
+    "answer": 0,
+    "ja": "A: 今日の午後テニスをしようよ。 / B: ごめん、今日は勉強しなきゃ。 / A: わかった。じゃあ明日はどう？",
+    "explain": "あとに「じゃあ明日は？」と続くので、B はさそいをことわっています。ことわる理由を言っている選択肢を選びます。"
+  },
+  {
+    "id": 21,
+    "scene": "家・朝のしたく",
+    "lines": [
+      { "sp": "A", "text": "What time do you usually get up?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["At six thirty.", "By bike.", "For breakfast.", "About ten minutes."],
+    "answer": 0,
+    "ja": "A: あなたはふだん何時に起きますか。 / B: 6時30分です。",
+    "explain": "What time ～? には at + 時刻 で答えます。手段を答える by bike や所要時間とは区別しましょう。"
+  },
+  {
+    "id": 22,
+    "scene": "おでかけ・きっぷ",
+    "lines": [
+      { "sp": "A", "text": "Two tickets to Nagoya, please." },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Here you are. That's 6,000 yen.", "You're welcome.", "I've never been there.", "It's next to the bank."],
+    "answer": 0,
+    "ja": "A: 名古屋まで2枚お願いします。 / B: はい、どうぞ。6000円です。",
+    "explain": "切符を買う場面です。物をわたすときは Here you are.、続けて金額を伝えるのが自然な流れです。"
+  },
+  {
+    "id": 23,
+    "scene": "学校・部活",
+    "lines": [
+      { "sp": "A", "text": "How often do you practice the piano?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Three times a week.", "In the music room.", "Because I like it.", "Yes, very well."],
+    "answer": 0,
+    "ja": "A: どのくらいピアノを練習するの？ / B: 週に3回だよ。",
+    "explain": "How often ～? は回数をたずねる質問。once / twice / three times a week のように答えます。"
+  },
+  {
+    "id": 24,
+    "scene": "気持ち・しんぱい",
+    "lines": [
+      { "sp": "A", "text": "I lost my wallet on the train." },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["That's too bad. Did you call the station?", "Congratulations!", "Here you are.", "Nice to meet you."],
+    "answer": 0,
+    "ja": "A: 電車でさいふをなくしちゃった。 / B: それは大変。駅に電話した？",
+    "explain": "悪い知らせには That's too bad. / I'm sorry to hear that. で答えます。よい知らせの Congratulations! とは正反対です。"
+  },
+  {
+    "id": 25,
+    "scene": "食事・レストラン",
+    "lines": [
+      { "sp": "A", "text": "Would you like something to drink?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Orange juice, please.", "I'm looking for a cap.", "It was delicious.", "Yes, I cooked it."],
+    "answer": 0,
+    "ja": "A: 何かお飲み物はいかがですか。 / B: オレンジジュースをお願いします。",
+    "explain": "Would you like ～? には ～, please. で答えるのが定番。ことわるときは No, thank you. です。"
+  },
+  {
+    "id": 26,
+    "scene": "友だち・しょうかい",
+    "lines": [
+      { "sp": "A", "text": "This is my friend, Yuki." },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["Nice to meet you, Yuki.", "See you later.", "Thanks a lot.", "That's right."],
+    "answer": 0,
+    "ja": "A: こちらは友だちのユキだよ。 / B: はじめまして、ユキ。",
+    "explain": "人をしょうかいされたら Nice to meet you. と答えます。別れのあいさつ See you later. と混同しないように。"
+  },
+  {
+    "id": 27,
+    "scene": "学校・テスト",
+    "lines": [
+      { "sp": "A", "text": "I got 95 on the English test!" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["That's great! Good job.", "I'm sorry to hear that.", "Don't worry about it.", "Take care of yourself."],
+    "answer": 0,
+    "ja": "A: 英語のテストで95点取ったよ！ / B: すごい！よくやったね。",
+    "explain": "よい知らせには That's great! / Good job! でほめます。悪い知らせへの返事と取りちがえないようにしましょう。"
+  },
+  {
+    "id": 28,
+    "scene": "おでかけ・バス",
+    "lines": [
+      { "sp": "A", "text": "How long does it take to the museum?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["About twenty minutes by bus.", "It's 300 yen.", "Every Sunday.", "It's very old."],
+    "answer": 0,
+    "ja": "A: 博物館までどのくらいかかりますか。 / B: バスで20分ぐらいです。",
+    "explain": "How long ～? は時間の長さをたずねる質問。ねだんを聞く How much ～? との区別がねらわれます。"
+  },
+  {
+    "id": 29,
+    "scene": "家・かぞく",
+    "lines": [
+      { "sp": "A", "text": "Whose bag is this?" },
+      { "sp": "B", "text": null }
+    ],
+    "choices": ["It's my sister's.", "It's black and white.", "It's on the chair.", "It's very heavy."],
+    "answer": 0,
+    "ja": "A: これはだれのかばんですか。 / B: 姉のです。",
+    "explain": "Whose ～? は持ち主をたずねる質問。色を聞く What color や場所を聞く Where と混同しないようにしましょう。"
+  },
+  {
+    "id": 30,
+    "scene": "友だち・パーティー",
+    "lines": [
+      { "sp": "A", "text": "Can you come to my birthday party on Saturday?" },
+      { "sp": "B", "text": null },
+      { "sp": "A", "text": "Great! It starts at two." }
+    ],
+    "choices": ["Sure, I'd love to.", "No, it's not mine.", "I'm afraid I can't hear you.", "It was a lot of fun."],
+    "answer": 0,
+    "ja": "A: 土曜日のぼくの誕生日パーティーに来られる？ / B: うん、ぜひ行きたい。 / A: よかった！2時に始まるよ。",
+    "explain": "あとで A が Great! と喜んでいるので、B はさそいを受けています。I'd love to. は「ぜひ」という前向きな返事です。"
+  }
+]

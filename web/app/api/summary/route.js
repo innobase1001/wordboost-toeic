@@ -64,6 +64,8 @@ export async function POST(req) {
         {
           role: 'user',
           content: buildSummaryUser({
+            modeLabel: body.modeLabel,
+            modeExam: body.modeExam,
             total,
             correctCount,
             results,

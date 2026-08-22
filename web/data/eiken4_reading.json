@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "type": "掲示",
+    "typeNote": "英検4級 大問4A（掲示・案内の読み取り）",
+    "title": "Summer Swimming Class",
+    "body": "Green Park Pool\n\nDo you want to swim well? Join our summer class!\n\nDate: August 1 - August 10\nTime: 9:00 a.m. - 11:00 a.m.\nPlace: Green Park Pool\nPrice: 3,000 yen for ten days\n\nStudents must bring a towel and a swimming cap.\nPlease call 012-345-6789 before July 25.",
+    "ja": "グリーン公園プール／上手に泳ぎたいですか。夏の教室に参加しましょう！ 日程: 8月1日〜8月10日 / 時間: 午前9時〜11時 / 場所: グリーン公園プール / 料金: 10日間で3000円 / 生徒はタオルと水泳ぼうしを持ってこなければなりません。7月25日までに012-345-6789へお電話ください。",
+    "questions": [
+      {
+        "q": "How long is the swimming class?",
+        "choices": ["Five days.", "Ten days.", "Two weeks.", "One month."],
+        "answer": 1,
+        "explain": "Date の欄に August 1 - August 10 とあり、Price にも for ten days と書かれています。掲示は表の部分に答えが集まります。"
+      },
+      {
+        "q": "What must students bring?",
+        "choices": ["A towel and a swimming cap.", "A notebook and a pen.", "Lunch and a drink.", "3,000 yen."],
+        "answer": 0,
+        "explain": "must bring ～ が「持ってこなければならないもの」。3,000円は料金であって、持ち物として書かれてはいません。"
+      },
+      {
+        "q": "What should people do before July 25?",
+        "choices": ["Go to the pool.", "Call the pool.", "Send an e-mail.", "Pay the money."],
+        "answer": 1,
+        "explain": "最後の行に Please call ～ before July 25. とあります。掲示では最後の1〜2行に「申しこみ方法」が書かれることが多いです。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "type": "Eメール",
+    "typeNote": "英検4級 大問4B（Eメールの読み取り）",
+    "title": "From: Emi  /  To: Lisa",
+    "body": "Hi Lisa,\n\nHow are you? I'm going to visit my grandmother in Nagano next weekend. She lives near a big mountain. My family will stay there for three days.\n\nI want to take pictures of the mountain, but my camera is broken. Can I borrow yours? I will give it back on Monday.\n\nYour friend,\nEmi",
+    "ja": "こんにちはリサ／元気ですか。私は次の週末、長野の祖母を訪ねます。祖母は大きな山の近くに住んでいます。家族で3日間泊まります。山の写真をとりたいのですが、私のカメラがこわれています。あなたのを借りてもいいですか。月曜日に返します。あなたの友だち、エミ",
+    "questions": [
+      {
+        "q": "Where will Emi go next weekend?",
+        "choices": ["To Tokyo.", "To Nagano.", "To Osaka.", "To the sea."],
+        "answer": 1,
+        "explain": "1つ目の段落に visit my grandmother in Nagano とあります。Eメールでは最初の段落に「いつ・どこ」が書かれるのが定番です。"
+      },
+      {
+        "q": "Why does Emi write this e-mail?",
+        "choices": ["To say thank you.", "To ask for a camera.", "To invite Lisa to a party.", "To tell about her test."],
+        "answer": 1,
+        "explain": "2つ目の段落の Can I borrow yours? が用件です。Eメール問題は「何のために書いたか」がよく問われます。"
+      },
+      {
+        "q": "When will Emi give the camera back?",
+        "choices": ["On Friday.", "On Saturday.", "On Sunday.", "On Monday."],
+        "answer": 3,
+        "explain": "I will give it back on Monday. と書かれています。曜日は最後の方に出てくることが多いので、終わりまで読みましょう。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "type": "説明文",
+    "typeNote": "英検4級 大問4C（説明文の読み取り）",
+    "title": "Ken's New Club",
+    "body": "Ken is a junior high school student. Last year, he was in the soccer club. He liked soccer, but he hurt his leg in April. He couldn't play soccer for two months.\n\nOne day, his friend Sara asked him to join the brass band. Ken didn't know how to play any instrument, but he tried. Now he practices the trumpet every day. He will play at the school festival in November.",
+    "ja": "ケンは中学生です。去年はサッカー部にいました。サッカーが好きでしたが、4月に足をけがしました。2か月間サッカーができませんでした。ある日、友だちのサラが吹奏楽部に入らないかとさそってくれました。ケンは楽器のひき方を何も知りませんでしたが、やってみました。今は毎日トランペットを練習しています。11月の文化祭で演奏します。",
+    "questions": [
+      {
+        "q": "Why did Ken stop playing soccer?",
+        "choices": ["He didn't like it.", "He hurt his leg.", "He moved to another school.", "He was too busy."],
+        "answer": 1,
+        "explain": "he hurt his leg in April が理由です。Why ～? の問題は but のあとに答えがあることが多いです。"
+      },
+      {
+        "q": "Who asked Ken to join the brass band?",
+        "choices": ["His teacher.", "His brother.", "His friend Sara.", "His mother."],
+        "answer": 2,
+        "explain": "his friend Sara asked him to join ～ とあります。ask + 人 + to ～ で「人に～するようたのむ」です。"
+      },
+      {
+        "q": "What does Ken do every day now?",
+        "choices": ["He plays soccer.", "He practices the trumpet.", "He studies English.", "He goes to the hospital."],
+        "answer": 1,
+        "explain": "Now he practices the trumpet every day. と書かれています。now は「今の話」の合図です。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "掲示",
+    "typeNote": "英検4級 大問4A（掲示・案内の読み取り）",
+    "title": "School Library News",
+    "body": "Nishi Junior High School Library\n\nNew books came last week!\n\nOpen: Monday - Friday, 8:30 a.m. - 5:00 p.m.\nClosed: Saturday and Sunday\n\nYou can borrow three books for two weeks.\nPlease don't eat or drink in the library.\nIf you have any questions, ask Ms. Tanaka.",
+    "ja": "西中学校 図書室／先週、新しい本が入りました！ 開室: 月曜〜金曜 午前8時30分〜午後5時 / 休室: 土曜と日曜 / 2週間、3冊まで借りられます。図書室では飲食をしないでください。質問があれば田中先生にたずねてください。",
+    "questions": [
+      {
+        "q": "When is the library closed?",
+        "choices": ["On Monday.", "On Friday.", "On Saturday and Sunday.", "Every morning."],
+        "answer": 2,
+        "explain": "Closed の欄に Saturday and Sunday とあります。Open と Closed の行を取りちがえないようにしましょう。"
+      },
+      {
+        "q": "How many books can students borrow?",
+        "choices": ["One.", "Two.", "Three.", "Five."],
+        "answer": 2,
+        "explain": "borrow three books for two weeks とあります。数字が2つ（3冊・2週間）出てくるので、何の数かを確かめます。"
+      },
+      {
+        "q": "What can't students do in the library?",
+        "choices": ["Read books.", "Eat or drink.", "Ask questions.", "Borrow books."],
+        "answer": 1,
+        "explain": "Please don't eat or drink in the library. が禁止事項です。掲示の don't の行はよく問われます。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "type": "Eメール",
+    "typeNote": "英検4級 大問4B（Eメールの読み取り）",
+    "title": "From: Mr. Brown  /  To: Class 2A",
+    "body": "Hello, everyone.\n\nWe will go to the science museum next Wednesday. The bus will leave school at 8:40 a.m., so please come to school by 8:20.\n\nBring your lunch and 500 yen for the ticket. You don't need your textbooks that day.\n\nWe will come back to school at 3:30 p.m.\n\nMr. Brown",
+    "ja": "みなさん、こんにちは。次の水曜日に科学博物館へ行きます。バスは午前8時40分に学校を出発しますので、8時20分までに登校してください。お弁当と入場料の500円を持ってきてください。その日は教科書は必要ありません。学校には午後3時30分に戻ります。ブラウン先生",
+    "questions": [
+      {
+        "q": "What time must students come to school?",
+        "choices": ["By 8:20.", "By 8:40.", "By 9:00.", "By 3:30."],
+        "answer": 0,
+        "explain": "バスの出発は8:40ですが、生徒が来る時刻は come to school by 8:20 です。似た時刻が並ぶので読み分けましょう。"
+      },
+      {
+        "q": "What do students need to bring?",
+        "choices": ["Their textbooks.", "Lunch and 500 yen.", "A camera.", "Nothing."],
+        "answer": 1,
+        "explain": "Bring your lunch and 500 yen ～ が持ち物です。次の文に textbooks は必要ないと書かれています。"
+      },
+      {
+        "q": "Where will the students go?",
+        "choices": ["To the zoo.", "To the science museum.", "To the library.", "To the park."],
+        "answer": 1,
+        "explain": "1つ目の段落に go to the science museum とあります。行き先は最初の段落に書かれるのが定番です。"
+      }
+    ]
+  }
+]

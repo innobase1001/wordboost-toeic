@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "WordBoost — TOEIC 700点 英単語アプリ",
-  description: "AIコーチが「なぜ間違えたか」まで教えてくれる、社会人のためのスキマ英単語アプリ",
+  title: "WordBoost 4級 — 英検4級 合格のための英単語アプリ",
+  description: "AIコーチが「なぜ間違えたか」まで教えてくれる、英検4級合格のためのスキマ英単語アプリ",
 };
 
 export const viewport = {
